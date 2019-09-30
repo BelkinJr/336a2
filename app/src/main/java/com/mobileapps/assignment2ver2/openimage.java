@@ -20,19 +20,14 @@ public class openimage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.openimage);
         photo = findViewById(R.id.photoviewer);
-       // Uri uri = getIntent().getData();
-       // photo.setImageResource(getIntent().getIntExtra("img", 0));
 
+        //get path of the image as a string
         String photopath = getIntent().getExtras().getString("path");
         File imgFile = new File(photopath);
+        //decode image
         Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
 
-
         photo.setImageBitmap(myBitmap);
-
-
-        //photo.setImageResource(imageId);
-        //photo.setImageResource(getIntent().getIntExtra("imageId", 0));
 
     }
 
